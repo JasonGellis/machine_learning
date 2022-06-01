@@ -26,7 +26,7 @@ y_pred <- predict(regressor, newdata = test_set) # vector of predictive results
 # 1) SL = 0.05
 # 2) fit model with all variables
 regressor <- lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State,
-                data = dataset)
+                data = dataset) 
 summary(regressor)
 
 # 3) eliminate value with highest p-value above SL
@@ -34,8 +34,10 @@ regressor <- lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend,
                 data = dataset)
 summary(regressor)
 
-regressor <- lm(formula = Profit ~ R.D.Spend + Marketing.Spend, data = dataset) # remove administration
+regressor <- lm(formula = Profit ~ R.D.Spend + Marketing.Spend, 
+                data = dataset) # remove administration
 summary(regressor)
 
-regressor <- lm(formula = Profit ~ R.D.Spend, data = dataset) # remove marketing and spending
+regressor <- lm(formula = Profit ~ R.D.Spend,
+                data = dataset) # remove marketing and spending
 summary(regressor)
